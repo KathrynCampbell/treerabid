@@ -49,7 +49,7 @@ build_tree <- function(id_case,
                        min_time = 1e-6) {
 
   if(length(cutoff) > 1) {
-    if(length(cutoff) > 2 | !(c("time", "dist") %in% names(cutoff))) {
+    if (length(cutoff) > 2 || !all(c("time", "dist") %in% names(cutoff))) {
       stop("Should pass two cutoff thresholds in a vector named 'dist' and 'time'")
     }
     time_cut <- cutoff["time"]
